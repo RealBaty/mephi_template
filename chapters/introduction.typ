@@ -1,14 +1,7 @@
+// `biblio.typ` is imported so the language server resolves @cite keys while
+// editing this file alone; the bibliography is rendered once in contents.typ.
 #import "../biblio.typ":*
 #show bibliography: none
-// TODO this import is here only for lsp, need to remove it on release
-// #bibl
-// -------------------------------------------------------------------------------
-
-
-
-
-
-
 
 #set heading(numbering: none)
 #show heading: set align(center)

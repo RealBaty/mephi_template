@@ -9,5 +9,3 @@
 #file_listing("listings/next-slot.rs", "rust", "Реализация scan_getnextslot")<lst:next-slot>
 #file_listing("listings/tuplesat.rs", "rust", "Реализаця tuple_satisfies_snapshot")<lst:tuplesat>
 #file_listing("listings/scan-end.rs", "rust", "реализация scan_end")<lst:scanend>
-
-// = Приложение 2

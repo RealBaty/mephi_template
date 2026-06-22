@@ -21,12 +21,16 @@
   if f.kind == table or f.kind == raw {
     set figure.caption(position: top)
     set align(left)
-    set par(first-line-indent: (amount: 0pt, all: true))
+    // tables/listings: no paragraph indent, single line spacing
+    set par(first-line-indent: (amount: 0pt, all: true), leading: 0.65em)
     f
   } else {
     f
   }
 }
+// captions: 12pt, no first-line indent (applies to figure captions too)
+#show figure.caption: set text(size: 12pt)
+#show figure.caption: set par(first-line-indent: (amount: 0pt, all: true))
 #show figure.caption: it => context {
   // setup caption structure
   let custom-prefix = if it.kind == image {

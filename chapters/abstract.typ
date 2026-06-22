@@ -1,10 +1,11 @@
 #set heading(outlined: false, numbering: none)
 = Реферат
 
-Общий объем основного текста -- #context { counter(page).at(<conclusion>).at(0) },
-с учетом приложений -- #context { counter(page).final().first() }.
-Количество использованных источников -- #context { query(cite).dedup().len() }.
-Количество приложений -- #context { query(heading.where(level: 1).after(<fst_appendix>, inclusive: true)).len() }.
+Пояснительная записка содержит #context { counter(page).final().first() } с.,
+#context { query(figure.where(kind: image)).len() } рис.,
+#context { query(figure.where(kind: table)).len() } табл.,
+#context { query(heading.where(level: 1).after(<fst_appendix>, inclusive: true)).len() } прил.,
+#context { query(cite).dedup().len() } источников.
 
 Ключевые слова:
 

@@ -103,7 +103,7 @@
   align: (center, center, center, center),
   stroke: none,
   text_xpt("Оценка руководителя", 13), underlined, text_xpt("Оценка консультанта", 13), underlined,
-  [], text_xpt("(0-30 баллов)", 9), [], text_xpt("(0-30 баллов)", 9),
+  [], text_xpt("(0-15 баллов)", 9), [], text_xpt("(0-15 баллов)", 9),
   [], [], [], [],
   text_xpt("Итоговая оценка", 13), underlined, text_xpt("ECTS", 13), underlined,
   [], text_xpt("(0-100 баллов)", 9), [], [],

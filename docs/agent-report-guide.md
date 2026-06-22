@@ -105,7 +105,7 @@ listings/*               # если в PDF вставляются внешние
     top: 20mm,
   ),
 )
-#set text(font: "Times New Roman", lang: "ru", hyphenate: true, size: 13pt)
+#set text(font: "Times New Roman", lang: "ru", hyphenate: true, size: 12pt)
 #set par(justify: true, first-line-indent: (amount: 1.25cm, all: true), spacing: 1em, leading: 1em)
 
 #include "title/title.typ"
@@ -114,6 +114,10 @@ listings/*               # если в PDF вставляются внешние
 #set page(numbering: "1")
 #counter(page).update(2)
 #set heading(numbering: "1.1.")
+// heading sizes per guide: level 1 -- 14pt bold, level 2 -- 13pt bold, level 3+ -- 12pt bold
+#show heading: set text(size: 12pt, weight: "bold")
+#show heading.where(level: 2): set text(size: 13pt)
+#show heading.where(level: 1): set text(size: 14pt)
 #show heading: set align(left)
 #show heading.where(level: 1): set align(center)
 #set enum(indent: 7mm)
@@ -182,12 +186,16 @@ Helper-функции и переменные из `preamble.typ`:
   if f.kind == table or f.kind == raw {
     set figure.caption(position: top)
     set align(left)
-    set par(first-line-indent: (amount: 0pt, all: true))
+    // tables/listings: no paragraph indent, single line spacing
+    set par(first-line-indent: (amount: 0pt, all: true), leading: 0.65em)
     f
   } else {
     f
   }
 }
+// captions: 12pt, no first-line indent
+#show figure.caption: set text(size: 12pt)
+#show figure.caption: set par(first-line-indent: (amount: 0pt, all: true))
 #show figure.caption: it => context {
   let custom-prefix = if it.kind == image {
     [Рисунок]

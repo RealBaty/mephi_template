@@ -122,6 +122,8 @@ listings/*               # если в PDF вставляются внешние
 #show heading.where(level: 1): set align(center)
 #set enum(indent: 7mm)
 #set list(indent: 7mm, marker: [--])
+// formulas: centered (Typst default), sequential number "(N)" on the right — GOST
+#set math.equation(numbering: "(1)")
 
 #include "contents.typ"
 ```
